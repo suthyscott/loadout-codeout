@@ -26,8 +26,14 @@ Loadout.hasMany(SavedLoadout)
 SavedLoadout.belongsTo(User)
 SavedLoadout.belongsTo(Loadout)
 
-// This will reset and reseed your db: {force: true}
+const {register, login} = require('./controllers/authCtrl')
+const {isAuthenticated} = require('./middleware/isAuthorized')
 
+
+app.post('/register', register)
+app.post('/login', login)
+
+// This will reset and reseed your db: {force: true}
 sequelize.sync()
 .then(() => {
     app.listen(SERVER_PORT, console.log(`Take us to warp ${SERVER_PORT}!`))
