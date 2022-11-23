@@ -28,10 +28,19 @@ SavedLoadout.belongsTo(Loadout)
 
 const {register, login} = require('./controllers/authCtrl')
 const {isAuthenticated} = require('./middleware/isAuthorized')
+const {addLoadout, editLoadout, getAllLoadouts, addToMyLoadouts, getMyLoadouts} = require('./controllers/loadoutsCtrl')
 
-
+// User endpoints
 app.post('/register', register)
 app.post('/login', login)
+
+// Loadout endpoints
+app.post('/loadout/:userId', addLoadout)
+app.put('/loadout', editLoadout)
+app.get('/loadout', getAllLoadouts)
+
+app.post('/myloadouts', addToMyLoadouts)
+app.get('/myloadouts/:userId', getMyLoadouts)
 
 // This will reset and reseed your db: {force: true}
 sequelize.sync()

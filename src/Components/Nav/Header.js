@@ -11,7 +11,7 @@ const Header = () => {
       <NavLink to='/'>Home</NavLink>
       <NavLink to='/auth'>Auth</NavLink>
       <NavLink to='/addloadout'>Add Loadout</NavLink>
-      <NavLink to='/myloadout'>My Loadout</NavLink>
+      <NavLink to='/myloadouts'>My Loadouts</NavLink>
       </nav>
       <button onClick={() => authCtx.logout()}>logout</button>
     </div>

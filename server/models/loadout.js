@@ -17,6 +17,7 @@ module.exports = {
         perkOne: DataTypes.STRING,
         perkTwo: DataTypes.STRING,
         perkThree: DataTypes.STRING,
+        perkFour: DataTypes.STRING,
         fieldUpgradeOne: DataTypes.STRING,
         fieldUpgradeTwo: DataTypes.STRING,
         picture: DataTypes.STRING
